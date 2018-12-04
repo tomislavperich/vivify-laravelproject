@@ -11,12 +11,21 @@
 |
 */
 
+// Root route
+Route::get('/', 'HomeController@index')->name('home');
+
+// Home route
 Route::get('/home', function () {
-    return 'hello world';
+    return view('welcome');
 })->middleware('middleware');
 
+// About route
+Route::get('/about', function () {
+    return view('about');
+});
+
+// Home greeting route
 Route::get('/home/{name}', 'HiController');
 
+// Auth routes
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

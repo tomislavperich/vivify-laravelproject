@@ -13,4 +13,4 @@
 
 Route::get('/home', function () {
     return 'hello world';
-})->middleware('middleware');
+});

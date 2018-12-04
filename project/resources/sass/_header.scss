@@ -1,0 +1,9 @@
+.nav-links {
+    display: flex;
+    flex-flow: row nowrap;
+    
+    .nav-link a {
+        padding: 10px !important;
+        font-size: 5em;
+    }
+}

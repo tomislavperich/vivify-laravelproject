@@ -9,6 +9,6 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'country' => $faker->country,
         'company' => $faker->company,
-        'password' => bcrypt(str_random(7)),
+        'password' => bcrypt('secret'),
     ];
 });

@@ -56,30 +56,16 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
-                            <div class="col-md-6">
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Choose...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                            </div>
-                        </div>
-
                         <!-- Country -->
                         <div class="form-group row">
-                            <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
-
+                            <label id="country" for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }}" name="country" value="{{ old('country') }}" autofocus>
-
-                                @if ($errors->has('country'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('country') }}</strong>
-                                    </span>
-                                @endif
+                                <select name="country" class="custom-select" id="inputGroupSelect01" required>
+                                    <option value="" disabled selected>Choose...</option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{ $country }}">{{ $country }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
 
@@ -88,7 +74,7 @@
                             <label for="company" class="col-md-4 col-form-label text-md-right">{{ __('Company') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" value="{{ old('company') }}" autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" value="{{ old('company') }}" required autofocus>
 
                                 @if ($errors->has('company'))
                                     <span class="invalid-feedback" role="alert">

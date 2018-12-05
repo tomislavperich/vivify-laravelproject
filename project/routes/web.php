@@ -19,13 +19,13 @@ Route::get('/home', function () {
     return view('welcome');
 })->middleware('middleware');
 
+// Home greeting route
+Route::get('/home/{name}', 'HiController');
+
 // About route
 Route::get('/about', function () {
     return view('about');
 });
-
-// Home greeting route
-Route::get('/home/{name}', 'HiController');
 
 // Auth routes
 Auth::routes();
